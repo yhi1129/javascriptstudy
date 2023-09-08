@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>10진수 변환기</title>
+<body>
+        <script>
+            // 10진수 입력 받기
+            const decimalNumber = parseInt(prompt("10진수를 입력하세요:"));
+    
+            // 2진수로 변환
+            const binaryNumber = decimalNumber.toString(2);
+    
+            // 8진수로 변환
+            const octalNumber = decimalNumber.toString(8);
+    
+            // 16진수로 변환
+            const hexadecimalNumber = decimalNumber.toString(16);
+    
+            // 결과 출력
+            console.log(`입력한 숫자: ${decimalNumber}`);
+            console.log(`2진수: ${binaryNumber}`);
+            console.log(`8진수: ${octalNumber}`);
+            console.log(`16진수: ${hexadecimalNumber}`);
+        </script>
+    </body>
+    </html>

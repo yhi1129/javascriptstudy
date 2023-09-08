@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 변환</title>
+</head>
+<body>
+    <h1>JSON 변환</h1>
+
+    <div>
+        <label for="jsonInput">JSON 문자열 입력:</label>
+        <textarea id="jsonInput" rows="4" cols="50"></textarea>
+        <button id="toJsonButton">JSON 문자열을 객체로 변환</button>
+    </div>
+
+    <div>
+        <label for="objectInput">객체 입력:</label>
+        <textarea id="objectInput" rows="4" cols="50"></textarea>
+        <button id="toJSONStringButton">객체를 JSON 문자열로 변환</button>
+    </div>
+
+    <div>
+        <h2>결과:</h2>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // JSON 문자열을 객체로 변환하는 함수
+        document.getElementById('toJsonButton').addEventListener('click', function () {
+            const jsonInput = document.getElementById('jsonInput').value;
+            try {
+                const jsonObject = JSON.parse(jsonInput);
+                document.getElementById('result').innerText = JSON.stringify(jsonObject, null, 2);
+            } catch (error) {
+                document.getElementById('result').innerText = '유효한 JSON 문자열이 아닙니다.';
+            }
+        });
+
+        // 객체를 JSON 문자열로 변환하는 함수
+        document.getElementById('toJSONStringButton').addEventListener('click', function () {
+            const objectInput = document.getElementById('objectInput').value;
+            try {
+                const jsonString = JSON.stringify(JSON.parse(objectInput), null, 2);
+                document.getElementById('result').innerText = jsonString;
+            } catch (error) {
+                document.getElementById('result').innerText = '유효한 객체가 아닙니다.';
+            }
+        });
+    </script>
+</body>
+</html>

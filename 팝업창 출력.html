@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업 창 예제</title>
+</head>
+<body>
+    <button id="popupButton">팝업 열기</button>
+
+    <script>
+        // 버튼을 클릭하면 팝업 창을 열기 위한 이벤트 핸들러
+        document.getElementById("popupButton").addEventListener("click", function() {
+            // 팝업 창 내용
+            var popupContent = "안녕하세요! 팝업 창입니다.";
+
+            // 팝업 창 열기
+            var popupWindow = window.open("", "_blank", "width=300, height=200");
+            popupWindow.document.write(popupContent);
+
+            // 팝업 창 스타일 설정 (선택 사항)
+            popupWindow.document.body.style.backgroundColor = "#f0f0f0";
+            popupWindow.document.body.style.textAlign = "center";
+        });
+    </script>
+</body>
+</html>
